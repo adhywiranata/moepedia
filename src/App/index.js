@@ -96,7 +96,7 @@ export class App extends Component {
             </View>
             <ScrollView style={styles.bottomMenu} horizontal={true}>
               <View style={styles.bottomMenuTab}>
-                <Text style={styles.bottomMenuTabActive}>Hot Items</Text>
+                <Text style={styles.bottomMenuTabActive}>New Items</Text>
               </View>
               <View style={styles.bottomMenuTab}>
                 <Text style={styles.bottomMenuTabInactive}>Popular</Text>
