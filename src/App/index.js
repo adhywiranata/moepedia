@@ -15,7 +15,7 @@ import itemsDataObj from '../data/itemsData.json';
 
 import UpperHeader from './components/UpperHeader';
 import LowerHeader from './components/LowerHeader';
-import ItemCard from './components/ItemCard'
+import ItemCard from './routes/home/ItemCard'
 
 export class App extends Component {
   constructor() {

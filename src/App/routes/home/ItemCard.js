@@ -12,49 +12,49 @@ const ItemCard = (item) => (
     <View style={styles.innerGrid}>
       {(item.name === 'Menma'
           ? <Image
-        source={require('../../images/menma-nendo.jpg')}
+        source={require('../../../images/menma-nendo.jpg')}
         style={styles.gridImage}/>
       : <Text></Text>
       )}
 
       {(item.name === 'Asuna'
           ? <Image
-        source={require('../../images/asuna-nendo.jpg')}
+        source={require('../../../images/asuna-nendo.jpg')}
         style={styles.gridImage}/>
       : <Text></Text>
       )}
 
       {(item.name === 'Homura'
           ? <Image
-        source={require('../../images/homura-nendo.jpg')}
+        source={require('../../../images/homura-nendo.jpg')}
         style={styles.gridImage}/>
       : <Text></Text>
       )}
 
       {(item.name === 'Irine'
           ? <Image
-        source={require('../../images/irine-nendo.jpg')}
+        source={require('../../../images/irine-nendo.jpg')}
         style={styles.gridImage}/>
       : <Text></Text>
       )}
 
       {(item.name === 'Kudd'
           ? <Image
-        source={require('../../images/kudd_nendo.jpeg')}
+        source={require('../../../images/kudd_nendo.jpeg')}
         style={styles.gridImage}/>
       : <Text></Text>
       )}
 
       {(item.name === 'Rem'
           ? <Image
-        source={require('../../images/rem-nendo.jpg')}
+        source={require('../../../images/rem-nendo.jpg')}
         style={styles.gridImage}/>
       : <Text></Text>
       )}
 
       {(item.name === 'Saber'
           ? <Image
-        source={require('../../images/saber-nendo.jpg')}
+        source={require('../../../images/saber-nendo.jpg')}
         style={styles.gridImage}/>
       : <Text></Text>
       )}
