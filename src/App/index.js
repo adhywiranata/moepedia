@@ -13,49 +13,70 @@ import {
 
 import itemsDataObj from '../data/itemsData.json';
 
-const UpperHeader = () => (
-  <View style={styles.upperHeader}>
+import UpperHeader from './components/UpperHeader';
+import LowerHeader from './components/LowerHeader';
 
-    <View>
-      <Text style={styles.leftMenu}>MENU</Text>
+const ItemCard = (item) => (
+  <View key={item._id} style={styles.grid}>
+    <View style={styles.innerGrid}>
+      {(item.name === 'Menma'
+          ? <Image
+        source={require('../images/menma-nendo.jpg')}
+        style={styles.gridImage}/>
+      : <Text></Text>
+      )}
+
+      {(item.name === 'Asuna'
+          ? <Image
+        source={require('../images/asuna-nendo.jpg')}
+        style={styles.gridImage}/>
+      : <Text></Text>
+      )}
+
+      {(item.name === 'Homura'
+          ? <Image
+        source={require('../images/homura-nendo.jpg')}
+        style={styles.gridImage}/>
+      : <Text></Text>
+      )}
+
+      {(item.name === 'Irine'
+          ? <Image
+        source={require('../images/irine-nendo.jpg')}
+        style={styles.gridImage}/>
+      : <Text></Text>
+      )}
+
+      {(item.name === 'Kudd'
+          ? <Image
+        source={require('../images/kudd_nendo.jpeg')}
+        style={styles.gridImage}/>
+      : <Text></Text>
+      )}
+
+      {(item.name === 'Rem'
+          ? <Image
+        source={require('../images/rem-nendo.jpg')}
+        style={styles.gridImage}/>
+      : <Text></Text>
+      )}
+
+      {(item.name === 'Saber'
+          ? <Image
+        source={require('../images/saber-nendo.jpg')}
+        style={styles.gridImage}/>
+      : <Text></Text>
+      )}
+
+      <View style={styles.gridContent}>
+        <Text style={styles.gridTitle}>{item.name}</Text>
+        <Text style={styles.gridPrice}>Rp. {item.price}</Text>
+        <View style={styles.gridSeparator} />
+        <Text style={styles.gridStore}>{item.store}</Text>
+      </View>
     </View>
-
-    <View style={styles.centerLogo}>
-      <Text style={styles.logo}>
-        Moepedia
-      </Text>
-    </View>
-
-    <View>
-      <Text style={styles.rightMenu}></Text>
-    </View>
-
-  </View>// upperHeader End
-);
-
-const LowerHeader = (props) => (
-  <View style={styles.lowerHeader}>
-
-    <View>
-      <TextInput
-        style={styles.input}
-        onChangeText={this.handleChange.bind(this)}
-        value={this.state.searchTerm}
-        autoCapitalize="none"
-        placeholder="Search for your waifus here"
-      />
-      <Text>Search: {this.state.searchTerm}</Text>
-
-      <TouchableHighlight
-        style={styles.button}
-        onPress={this.handlePress.bind(this)}
-      >
-        <Text style={styles.buttonText}>Save</Text>
-      </TouchableHighlight>
-    </View>
-
   </View>
-)
+);
 
 export class App extends Component {
   constructor() {
@@ -123,72 +144,15 @@ export class App extends Component {
         <View style={styles.content}>
 
           <ScrollView style={styles.gridList}>
-            {this.state.items
-              .filter(item => {
-                return (item.name.indexOf(this.state.searchTerm) !== -1 || item.name.indexOf(this.state.searchTerm.toUpperCase()) !== -1)
-              })
-              .map(item => {
-              return <View key={item._id} style={styles.grid}>
-                <View style={styles.innerGrid}>
-                  {(item.name === 'Menma'
-                      ? <Image
-                    source={require('../images/menma-nendo.jpg')}
-                    style={styles.gridImage}/>
-                  : <Text></Text>
-                  )}
-
-                  {(item.name === 'Asuna'
-                      ? <Image
-                    source={require('../images/asuna-nendo.jpg')}
-                    style={styles.gridImage}/>
-                  : <Text></Text>
-                  )}
-
-                  {(item.name === 'Homura'
-                      ? <Image
-                    source={require('../images/homura-nendo.jpg')}
-                    style={styles.gridImage}/>
-                  : <Text></Text>
-                  )}
-
-                  {(item.name === 'Irine'
-                      ? <Image
-                    source={require('../images/irine-nendo.jpg')}
-                    style={styles.gridImage}/>
-                  : <Text></Text>
-                  )}
-
-                  {(item.name === 'Kudd'
-                      ? <Image
-                    source={require('../images/kudd_nendo.jpeg')}
-                    style={styles.gridImage}/>
-                  : <Text></Text>
-                  )}
-
-                  {(item.name === 'Rem'
-                      ? <Image
-                    source={require('../images/rem-nendo.jpg')}
-                    style={styles.gridImage}/>
-                  : <Text></Text>
-                  )}
-
-                  {(item.name === 'Saber'
-                      ? <Image
-                    source={require('../images/saber-nendo.jpg')}
-                    style={styles.gridImage}/>
-                  : <Text></Text>
-                  )}
-
-                  <View style={styles.gridContent}>
-                    <Text style={styles.gridTitle}>{item.name}</Text>
-                    <Text style={styles.gridPrice}>Rp. {item.price}</Text>
-                    <View style={styles.gridSeparator} />
-                    <Text style={styles.gridStore}>{item.store}</Text>
-
-                  </View>
-                </View>
-              </View>
-              })}
+            {
+              this.state.items
+                .filter(item => {
+                  return (item.name.indexOf(this.state.searchTerm) !== -1 || item.name.indexOf(this.state.searchTerm.toUpperCase()) !== -1)
+                })
+                .map(item => {
+                return <ItemCard key={item._id} {...item}></ItemCard>
+                })
+            }
           </ScrollView>
 
         </View>
@@ -222,40 +186,6 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     alignSelf: 'stretch',
   },
-
-
-  upperHeader: {
-    flex: 1,
-    paddingTop: 30,
-    //height: windowHeight * 0.01,
-    alignSelf: 'stretch',
-    flexDirection:'row',
-    flexWrap: 'wrap',
-    alignItems: 'flex-start',
-  },
-  lowerHeader: {
-    //height: windowHeight * 0.3,
-  },
-  centerLogo: {
-    width: windowWidth * 0.6
-  },
-  leftMenu: {
-    color: '#FFFFFF',
-    fontWeight: 'bold',
-    paddingLeft: 20,
-    width: windowWidth * 0.2,
-    textAlign: 'left',
-    fontSize: 11,
-  },
-  rightMenu: {
-    color: '#FFFFFF',
-    fontWeight: 'bold',
-    paddingRight: 20,
-    width: windowWidth * 0.2,
-    textAlign: 'right',
-    fontSize: 11,
-  },
-
   bottomMenu:{
     backgroundColor: '#FFFFFF',
   },
@@ -273,8 +203,6 @@ const styles = StyleSheet.create({
     color: '#666',
     fontWeight: 'bold'
   },
-
-
   gridList: {
   },
   grid: {
@@ -325,12 +253,6 @@ const styles = StyleSheet.create({
   gridStore: {
     marginTop: 5,
     color: '#666'
-  },
-  logo: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 3,
-    color: '#FFFFFF'
   },
   instructions: {
     textAlign: 'center',
