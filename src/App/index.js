@@ -11,6 +11,8 @@ import {
   ListView
 } from 'react-native';
 
+import itemsDataObj from '../data/itemsData.json';
+
 const UpperHeader = () => (
   <View style={styles.upperHeader}>
 
@@ -60,64 +62,7 @@ export class App extends Component {
     super();
     this.state = {
       searchTerm: '',
-      items: [
-        {
-          _id: 1,
-          name: 'Menma',
-          price: 550000,
-          description: 'nendoroid GSC Asli',
-          store: 'kawaii shop',
-          imageSrc: 'menma-nendo.jpg'
-        },
-        {
-          _id: 2,
-          name: 'Asuna',
-          price: 550000,
-          description: 'rikka kawaiii desu',
-          store: 'kawaii shop',
-          imageSrc: 'menma-nendo.jpg'
-        },
-        {
-          _id: 3,
-          name: 'Homura',
-          price: 550000,
-          description: 'kudd kawaiii desu',
-          store: 'kawaii shop',
-          imageSrc: 'menma-nendo.jpg'
-        },
-        {
-          _id: 4,
-          name: 'Irine',
-          price: 100,
-          description: 'kudd kawaiii desu',
-          store: 'kawaii shop',
-          imageSrc: 'menma-nendo.jpg'
-        },
-        {
-          _id: 5,
-          name: 'Kudd',
-          price: 100,
-          description: 'kudd kawaiii desu',
-          store: 'kawaii shop',
-          imageSrc: 'menma-nendo.jpg'
-        },
-        {
-          _id: 6,
-          name: 'Rem',
-          price: 100,
-          description: 'kudd kawaiii desu',
-          store: 'kawaii shop',
-          imageSrc: 'menma-nendo.jpg'
-        },
-        {
-          _id: 7,
-          name: 'Saber',
-          price: 100,
-          description: 'kudd kawaiii desu',
-          store: 'kawaii shop',
-          imageSrc: 'menma-nendo.jpg'
-        }
-      ]
+      items: itemsDataObj
     }
   }
 

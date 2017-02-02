@@ -1,0 +1,40 @@
+[{
+  "_id": 1,
+  "name": "Menma",
+  "price": 550000,
+  "description": "nendoroid GSC Asli",
+  "store": "kawaii shop",
+  "imageSrc": "menma-nendo.jpg"
+},
+{
+  "_id": 2,
+  "name": "Asuna",
+  "price": 550000,
+  "description": "rikka kawaiii desu",
+  "store": "kawaii shop",
+  "imageSrc": "menma-nendo.jpg"
+},
+{
+  "_id": 3,
+  "name": "Homura",
+  "price": 550000,
+  "description": "kudd kawaiii desu",
+  "store": "kawaii shop",
+  "imageSrc": "menma-nendo.jpg"
+},
+{
+  "_id": 4,
+  "name": "Irine",
+  "price": 100,
+  "description": "kudd kawaiii desu",
+  "store": "kawaii shop",
+  "imageSrc": "menma-nendo.jpg"
+},
+{
+  "_id": 5,
+  "name": "Kudd",
+  "price": 100,
+  "description": "kudd kawaiii desu",
+  "store": "kawaii shop",
+  "imageSrc": "menma-nendo.jpg"
+}]
